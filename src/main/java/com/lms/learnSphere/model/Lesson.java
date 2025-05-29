@@ -27,4 +27,13 @@ public class Lesson {
     @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "course_id", nullable = false) private Course course;
     @CreatedDate @Column(nullable = false, updatable = false) private LocalDateTime createdAt;
     @LastModifiedDate @Column(nullable = false) private LocalDateTime updatedAt;
+
+    public Lesson(String title, String description, String contentUrl, Integer durationMinutes, Integer orderIndex, Course course) {
+        this.title = title;
+        this.description = description;
+        this.contentUrl = contentUrl;
+        this.durationMinutes = durationMinutes;
+        this.orderIndex = orderIndex;
+        this.course = course;
+    }
 }

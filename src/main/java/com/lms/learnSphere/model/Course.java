@@ -30,4 +30,11 @@ public class Course {
     private List<Lesson> lessons = new ArrayList<>();
     @CreatedDate @Column(nullable = false, updatable = false) private LocalDateTime createdAt;
     @LastModifiedDate @Column(nullable = false) private LocalDateTime updatedAt;
+
+    public Course(String title, String description, BigDecimal price, String coverImageUrl) {
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.coverImageUrl = coverImageUrl;
+    }
 }
